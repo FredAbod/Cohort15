@@ -14,10 +14,10 @@ app.get("/", (req, res) => {
   res.send("Hello World"); // Send a response to the client
 });
 
-app.use('/api/v1', router)
+app.use('/api/v1', router);
 
 // Start the server and listen on the defined port
 app.listen(port, () => {
-  connectDb;
+  connectDb(); // Ensure the database connection function is called
   console.log(`Server is running on port ${port}`); // Log that the server is running
 });

@@ -1,14 +1,11 @@
 const express = require('express');
-const { save_car, get_car, update_car, find_car, delete_car } = require('../controller/user.controller');
+const { getCars, getCarById, createCar, updateCar, deleteCar } = require('../controllers/cars.controller');
 const router = express.Router();
 
-
-router.post('/save', save_car)
-router.get('/get', get_car)
-router.put('/update/:id', update_car)
-router.get('/find', find_car)
-router.delete('/find', delete_car)
-
-
+router.post('/save', createCar);
+router.get('/get', getCars);
+router.get('/find/:id', getCarById);
+router.put('/update/:id', updateCar);
+router.delete('/delete/:id', deleteCar);
 
 module.exports = router;

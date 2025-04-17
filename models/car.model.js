@@ -3,6 +3,10 @@ const mongoose = require("mongoose"); // Import mongoose module for MongoDB
 // Define a schema for the Car model
 const carSchema = new mongoose.Schema(
     {
+      name: {
+        type: String,
+        required: true
+      },
       make: String,
       model: { type: String, unique: true },
       year: { type: Number, unique: true },
